@@ -147,7 +147,6 @@ $(document).ready(function() {
       incorrect++;
       count++;
     }
-
     checkGameEnd();
   }
 
@@ -166,7 +165,6 @@ $(document).ready(function() {
   }
 
   //Time functions
-
   //Reset time to 10 seconds
   function resetTime() {
     time = 10;
