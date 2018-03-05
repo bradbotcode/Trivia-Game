@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <title>Rock Climbing Trivia</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 headline">
+                <h1>Rock Climbing Trivia</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-8">
+                <div>
+                </div>
+                <div class="card main">
+                    <div class="card-body">
+                        <button type="button" class="btn start">Start</button>
+                        <div class="card-text timer"></div>
+                        <h5 class="card-title question"></h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <button type="button" class="btn btn-light btn1">
+                            <li class="list-group-item firstAns"></li>
+                        </button>
+                        <button type="button" class="btn btn-light btn2">
+                            <li class="list-group-item secondAns"></li>
+                        </button>
+                        <button type="button" class="btn btn-light btn3">
+                            <li class="list-group-item thirdAns"></li>
+                        </button>
+                        <button type="button" class="btn btn-light btn4">
+                            <li class="list-group-item fourthAns"></li>
+                        </button>
+                    </ul>
+                    <div class="answer-holder"></div>
+                    <div class="correct-holder"></div>
+                    <div class="incorrect-holder"></div>
+                    <div class="unanswered-holder"></div>
+                    <div class="image-holder"></div>
+                </div>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+        <!-- <row>
+            <div class="col-md-5"></div>
+            <div class="col-md-2">
+                <button type="button" class="btn start">Start</button>
+            </div>
+            <div class="col-md-5"></div>
+        </row>
+        <row>
+            <div class="col-md-1 time-holder2">
+            </div>
+        </row>
+        <row>
+            <div class="col-md-12">
+
+                <div id="question-holder"></div>
+
+
+                <div id="answer-holder"></div>
+
+            </div>
+        </row>
+        <row>
+            <div class="col-md-4"></div>
+            <div class="col-md-4 image-holder">
+            </div>
+            <div class="col-md-4"></div>
+        </row>
+        <row>
+            <div class="col-md-12 choice-holder-1">
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4 correct-holder">
+            </div>
+            <div class="col-md-4"></div>
+            <row>
+                <div class="col-md-12 choice-holder-2">
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4 incorrect-holder">
+                </div>
+                <div class="col-md-4"></div>
+            </row>
+            <row>
+                <div class="col-md-12 choice-holder-3">
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4 unanswered-holder">
+                </div>
+                <div class="col-md-4"></div>
+            </row>
+            <row>
+                <div class="col-md-12 choice-holder-4">
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-8 restart-holder">
+                </div>
+                <div class="col-md-2"></div>
+            </row>
+    </div>
+    <!-- Link to JS -->
+        <script type="text/javascript" src="assets/game.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+body {
+  background-image: url(images/background.jpg);
+  background-size: cover;
+  max-width: 100%;
+}
+
+@font-face {
+  font-family: theFrontmanimport;
+  src: url(images/theFrontman.ttf);
+}
+
+.headline {
+  font-family: theFrontmanimport;
+  color: white;
+  text-align: center;
+}
+
+.btn {
+  text-align: left;
+}
+
+img {
+  height: 270px;
+  width: 480px;
+}
+
+/* Media Queries 1rem = 16px */
+@media (min-width: 544px) {
+  h1 {
+    font-size: 1.5rem;
+    margin: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+    margin: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 3.5rem;
+    margin: 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 4.5rem;
+    margin: 50px;
+  }
+}
