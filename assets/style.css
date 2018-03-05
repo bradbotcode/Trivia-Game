@@ -61,7 +61,7 @@ h5 {
   border-color: transparent;
 }
 
-/* Media Queries 1rem = 16px */
+/* Media Queries */
 @media (min-width: 544px) {
   h1 {
     font-size: 1.5rem;
