@@ -15,40 +15,171 @@ body {
   text-align: center;
 }
 
-.btn {
-  text-align: left;
+.startB,
+.start {
+  text-align: center;
+  font-size: 30px;
+  width: 60%;
+  margin: auto;
 }
 
-img {
-  height: 270px;
-  width: 480px;
+.timer {
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+}
+
+.correct-holder,
+.incorrect-holder,
+.unanswered-holder,
+.answer-holder {
+  font-size: 25px;
+  font-weight: bold;
+  color: lightgray;
+}
+
+.image-holder,
+.answer-holder,
+.timer,
+.correct-holder,
+.incorrect-holder,
+.unanswered-holder,
+h5 {
+  margin: auto;
+  text-align: center;
+}
+
+.timer,
+.answer-holder {
+  padding-bottom: 12px;
+}
+
+.card,
+.list-group,
+.main {
+  background-color: transparent;
+  border-color: transparent;
 }
 
 /* Media Queries 1rem = 16px */
 @media (min-width: 544px) {
   h1 {
     font-size: 1.5rem;
-    margin: 20px;
+    margin: 10px;
+  }
+  .question {
+    font-size: 20px;
+    color: gold;
+  }
+  .firstAns,
+  .secondAns,
+  .thirdAns,
+  .fourthAns {
+    font-size: 15px;
+    text-align: center;
+  }
+  .btn1,
+  .btn2,
+  .btn3,
+  .btn4 {
+    text-align: left;
+    background-color: transparent;
+    width: 100%;
+    margin: auto;
+  }
+  img {
+    height: 200px;
+    width: 390px;
   }
 }
-
 @media (min-width: 768px) {
   h1 {
     font-size: 2.5rem;
-    margin: 30px;
+    margin: 20px;
+  }
+  .question {
+    font-size: 23px;
+    color: gold;
+  }
+  .firstAns,
+  .secondAns,
+  .thirdAns,
+  .fourthAns {
+    font-size: 15px;
+    text-align: center;
+  }
+  .btn1,
+  .btn2,
+  .btn3,
+  .btn4 {
+    text-align: left;
+    background-color: transparent;
+    width: 70%;
+    margin: auto;
+  }
+  img {
+    height: 200px;
+    width: 390px;
   }
 }
-
 @media (min-width: 992px) {
   h1 {
     font-size: 3.5rem;
-    margin: 40px;
+    margin: 37px;
+  }
+  .question {
+    font-size: 25px;
+    color: gold;
+  }
+  .firstAns,
+  .secondAns,
+  .thirdAns,
+  .fourthAns {
+    font-size: 18px;
+    text-align: center;
+  }
+  .btn1,
+  .btn2,
+  .btn3,
+  .btn4 {
+    text-align: left;
+    background-color: transparent;
+    width: 40%;
+    margin: auto;
+  }
+  img {
+    height: 270px;
+    width: 480px;
   }
 }
 
 @media (min-width: 1200px) {
   h1 {
     font-size: 4.5rem;
-    margin: 50px;
+    margin: 45px;
+  }
+  .question {
+    font-size: 30px;
+    color: gold;
+  }
+  .firstAns,
+  .secondAns,
+  .thirdAns,
+  .fourthAns {
+    font-size: 20px;
+    text-align: center;
+  }
+  .btn1,
+  .btn2,
+  .btn3,
+  .btn4 {
+    text-align: left;
+    background-color: transparent;
+    width: 40%;
+    margin: auto;
+  }
+  img {
+    height: 270px;
+    width: 480px;
   }
 }

@@ -1,24 +1,24 @@
-// Define variables
+// Define global variables
 $(document).ready(function() {
   var count = 0;
-  var time = 31;
+  var time = 10;
   var isSelected = false;
-  var ticker;
+  var timer;
   var correct = 0;
   var incorrect = 0;
   var unanswered = 0;
 
-  // Questions and Answer Arrays
+  // Questions and Answers Arrays
   var question = [
-    "Rock climbing was initially a sub sport of which other sport?",
+    "Rock climbing was initially a sub-sport of which other sport?",
     "Which of the following is NOT a common piece of bouldering equipment?",
     "Which of the following is a common grading scale for bouldering problems?",
     "What kind of knot is an alpine butterfly knot?",
     "What term is used to describe the process that typically uses a rope system to protect a climber in the event of a fall?",
     "In what decade was rock climbing first considered a sport?",
     "What style of climbing is performed on small, tricky formations without the use of ropes or a harness?",
-    "What is another commonly used term for bouldering routes?",
-    "What style of climbing hold is usually no deepr than one inch and is grabbed with the tips of the fingers?",
+    "What term is commonly used to describe bouldering routes?",
+    "What style of climbing hold is usually no deeper than one inch and is held with the tips of the fingers?",
     "Which of the following terms is NOT a movement technique in climbing?"
   ];
   var answer = [
@@ -59,7 +59,7 @@ $(document).ready(function() {
   ];
   var thirdChoice = [
     "Hiking",
-    "Carabiner",
+    "Crash Pad",
     "Number scale",
     "Hitch knot",
     "Flaking",
@@ -107,7 +107,9 @@ $(document).ready(function() {
     hideResults();
     $(".answer-holder").hide();
     $(".image-holder").hide();
+    $(".start").hide();
     $(".timer").show();
+    $(".list-group").show();
     showHolders();
     $(".question").html("<div>" + question[count] + "</div>");
     $(".firstAns").html(firstChoice[count]);
@@ -120,32 +122,28 @@ $(document).ready(function() {
   $(".thirdAns").click(checkAnswer);
   $(".fourthAns").click(checkAnswer);
 
-  // Check Answer Function
+  // Function that checks for a correct or incorrect answer selection
   function checkAnswer() {
     hideHolders();
 
     if ($(this).text() === answer[count]) {
       stopTime();
       isSelected = true;
+      $(".list-group").hide();
       $(".answer-holder").show();
-      $(".answer-holder").html("<div>Correct!</div>");
+      $(".answer-holder").text("Correct!");
       $(".image-holder").show();
-      $(".image-holder").html(
-        "<div><img src='assets/images/correct.gif'></div>"
-      );
+      $(".image-holder").html("<img src='assets/images/correct.gif'>");
       correct++;
       count++;
     } else {
       stopTime();
       isSelected = true;
+      $(".list-group").hide();
       $(".answer-holder").show();
-      $(".answer-holder").html(
-        "<div>Wrong! The answer is, " + answer[count] + "</div>"
-      );
+      $(".answer-holder").text("Wrong! The answer is, " + answer[count] + ".");
       $(".image-holder").show();
-      $(".image-holder").html(
-        "<div><img src='assets/images/incorrect.gif'></div>"
-      );
+      $(".image-holder").html("<img src='assets/images/incorrect.gif'>");
       incorrect++;
       count++;
     }
@@ -153,7 +151,7 @@ $(document).ready(function() {
     checkGameEnd();
   }
 
-  // Chekc End Game Function
+  // Function that checks if it is the end of the game
   function checkGameEnd() {
     if (count === question.length) {
       $(".timer").hide();
@@ -167,75 +165,73 @@ $(document).ready(function() {
     }
   }
 
+  //Time functions
+
+  //Reset time to 10 seconds
   function resetTime() {
     time = 10;
   }
 
+  //Display time on game screen, starting at 10 and counting down
+  //If time reaches 0, show necessary answer-holder and image-holder
   function displayTime() {
+    $(".timer").text("Time remaining: " + time + "");
     time--;
-    $(".timer").html("<div>Time remaining: " + time + "</div>");
 
     if (time <= 0) {
       hideHolders();
+      $(".list-group").hide();
       stopTime();
       $(".answer-holder").show();
-      $(".answer-holder").html(
-        "<div>Time is up! The answer is, " + answer[count] + "</div>"
+      $(".answer-holder").text(
+        "Time is up! The answer is, " + answer[count] + "."
       );
-      displayImage();
+      $(".image-holder").show();
+      $(".image-holder").html("<img src='assets/images/incorrect.gif'>");
       unanswered++;
       count++;
       checkGameEnd();
     }
   }
 
+  //Function to start the time
   function startTime() {
-    clearInterval(ticker);
-    ticker = setInterval(displayTime, 1000);
+    clearInterval(timer);
+    timer = setInterval(displayTime, 1000);
   }
+
+  //Function to end the time
   function stopTime() {
-    clearInterval(ticker);
+    clearInterval(timer);
     resetTime();
     if (count < question.length - 1) {
       setTimeout(startTime, 2000);
       setTimeout(displayQuestion, 3000);
     }
   }
-
   resetTime();
 
-  // Display Images With Answer
-  //  function displayImage() {
-  //  $("#image-holder").html("<div><img src='assets/images/correct.gif'></div>");
-  // }
-
-  // Show Results Function
+  // Show End-of-Game Results Function
   function showResults() {
     $(".correct-holder").show();
-    $(".correct-holder").html("<div>Correct: " + correct + "</div>");
+    $(".correct-holder").text("Correct: " + correct + "");
     $(".incorrect-holder").show();
-    $(".incorrect-holder").html("<div>Incorrect: " + incorrect + "</div>");
+    $(".incorrect-holder").text("Incorrect: " + incorrect + "");
     $(".unanswered-holder").show();
-    $(".unanswered-holder").html("<div>Unanswered: " + unanswered + "</div>");
-    $(".restart-holder").show();
-    $(".restart-holder").html("<div>Click Start above to play again!</div>");
-  }
-
-  // Reset Results Function
-  function resetResults() {
-    correct = 0;
-    incorrect = 0;
-    unanswered = 0;
+    $(".unanswered-holder").text("Unanswered: " + unanswered + "");
   }
 
   // Start Game Function
   function startGame() {
-    startTime();
-    displayQuestion();
+    $(".card").hide();
   }
+  startGame();
 
-  // Start Game On Click
+  // Start Game On Click Function
   $(".start").on("click", function() {
-    startGame();
+    displayQuestion();
+    displayTime();
+    startTime();
+    $(".card").show();
   });
 });
